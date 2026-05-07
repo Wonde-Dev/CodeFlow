@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ⚡ React + Vite Starter Template
 
 A minimal and modern setup for building React applications with Vite, featuring Hot Module Replacement (HMR), Fast Refresh, and a basic ESLint configuration.
@@ -52,3 +53,7 @@ Migrating to TypeScript
 Enabling strict linting rules
 Adding testing tools (e.g., Vitest or Jest)
 Setting up CI/CD workflows
+=======
+# CodeFlow
+this is the frontend codeflow website that we can see its feature how it works it is built with react and tailwind v4 only and it is just legit UI
+>>>>>>> 0d849f23ebc25face527637f0d3c4c235055720f
