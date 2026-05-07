@@ -1,5 +1,115 @@
 @import "tailwindcss";
 
+@theme {
+  /* Light theme colors */
+  --color-light-bg: #f8fafc;
+  --color-light-text: #0f172a;
+  --color-light-muted: #64748b;
+  --color-light-surface: #ffffff;
+  --color-light-border: #e2e8f0;
+  --color-light-accent: #3b82f6;
+  --color-light-nav-bg: rgba(248, 250, 252, 0.8);
+  --color-light-nav-border: rgba(226, 232, 240, 0.5);
+  
+  /* Dark theme colors (current defaults) */
+  --color-dark-bg: #020617;
+  --color-dark-text: #f8fafc;
+  --color-dark-muted: #94a3b8;
+  --color-dark-surface: #0f172a;
+  --color-dark-border: #1e293b;
+  --color-dark-accent: #3b82f6;
+  --color-dark-nav-bg: rgba(2, 6, 23, 0.8);
+  --color-dark-nav-border: rgba(30, 41, 59, 0.5);
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: var(--color-light-bg);
+  --color-text: var(--color-light-text);
+  --color-muted: var(--color-light-muted);
+  --color-surface: var(--color-light-surface);
+  --color-border: var(--color-light-border);
+  --color-accent: var(--color-light-accent);
+  --color-nav-bg: var(--color-light-nav-bg);
+  --color-nav-border: var(--color-light-nav-border);
+  --color-nav-blur: blur(8px);
+  --color-hover: #e2e8f0;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: var(--color-dark-bg);
+  --color-text: var(--color-dark-text);
+  --color-muted: var(--color-dark-muted);
+  --color-surface: var(--color-dark-surface);
+  --color-border: var(--color-dark-border);
+  --color-accent: var(--color-dark-accent);
+  --color-nav-bg: var(--color-dark-nav-bg);
+  --color-nav-border: var(--color-dark-nav-border);
+  --color-nav-blur: blur(8px);
+  --color-hover: #1e293b;
+}
+
+@utility bg-theme {
+  background-color: var(--color-bg);
+}
+
+@utility text-theme {
+  color: var(--color-text);
+}
+
+@utility surface-theme {
+  background-color: var(--color-surface);
+}
+
+@utility border-theme {
+  border-color: var(--color-border);
+}
+
+@utility nav-bg {
+  background-color: var(--color-nav-bg);
+  backdrop-filter: var(--color-nav-blur);
+}
+
+@utility text-muted {
+  color: var(--color-muted);
+}
+
+@utility hover-surface {
+  background-color: var(--color-hover);
+}
+
+/* Overlay utility for glassmorphism elements */
+@utility overlay-light {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@utility overlay-hover-light {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode overlays (default) */
+[data-theme="dark"] .overlay-glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .overlay-glass-hover:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode overlays */
+[data-theme="light"] .overlay-glass {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .overlay-glass-hover:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 @layer utilities {
   .animate-in {
     animation-fill-mode: both;
@@ -41,23 +151,23 @@
 @keyframes slideInFromBottom {
   from {
     opacity: 0;
-    trasnform: translateY(1rem);
+    transform: translateY(1rem);
   }
 
   to {
     opacity: 1;
-    trasnform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes slideInFromTop {
   from {
     opacity: 0;
-    trasnform: translateY(-1rem);
+    transform: translateY(-1rem);
   }
 
   to {
     opacity: 1;
-    trasnform: translateY(0);
+    transform: translateY(0);
   }
 }

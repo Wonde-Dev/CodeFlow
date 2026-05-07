@@ -15,7 +15,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950/50 backdrop-blur-sm">
+    <footer className="border-t border-theme bg-surface-theme/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {/* Main footer content - hidden on mobile, visible on sm and up */}
         <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12">
@@ -28,20 +28,20 @@ export default function Footer() {
                   className="w-6 h-6 sm:w-8 sm:h-8"
                 />
               </div>
-              <span className="text-lg sm:text-xl font-bold">
-                <span className="text-white">Code</span>
-                <span className="text-blue-400">Flow</span>
-              </span>
+               <span className="text-lg sm:text-xl font-bold">
+                 <span className="text-theme">Code</span>
+                 <span className="text-blue-400">Flow</span>
+               </span>
             </div>
-            <p className="text-gray-400 mb-4 sm:mb-6 max-w-xs mx-auto sm:mx-0 text-sm sm:text-base">
+             <p className="text-muted mb-4 sm:mb-6 max-w-xs mx-auto sm:mx-0 text-sm sm:text-base">
               Transform your workflow with AI-powered tools and automation.
               Built for modern teams.
             </p>
-            <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
-              <a
-                href="#"
-                className="p-2 sm:p-2.5 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors duration-200"
-              >
+             <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
+               <a
+                 href="#"
+                 className="p-2 sm:p-2.5 surface-theme rounded-lg hover:hover-surface transition-colors duration-200"
+               >
                 <Twitter className="w-5 h-5 sm:w-5 sm:h-5" />
               </a>
               <a
@@ -70,20 +70,20 @@ export default function Footer() {
             <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
               {Object.entries(footerLinks).map(([category, links]) => (
                 <div key={category}>
-                  <h3 className="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-base">
-                    {category}
-                  </h3>
-                  <ul className="space-y-2 sm:space-y-3">
-                    {links.map((link) => (
-                      <li key={link}>
-                        <a
-                          href="#"
-                          className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm"
-                        >
-                          {link}
-                        </a>
-                      </li>
-                    ))}
+                   <h3 className="font-semibold text-theme mb-3 sm:mb-4 text-sm sm:text-base">
+                     {category}
+                   </h3>
+                   <ul className="space-y-2 sm:space-y-3">
+                     {links.map((link) => (
+                       <li key={link}>
+                         <a
+                           href="#"
+                           className="text-muted hover:text-theme transition-colors duration-200 text-xs sm:text-sm"
+                         >
+                           {link}
+                         </a>
+                       </li>
+                     ))}
                   </ul>
                 </div>
               ))}
@@ -91,27 +91,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 sm:pt-8 border-t-0 sm:border-t border-slate-800">
+        <div className="pt-6 sm:pt-8 border-t-0 sm:border-t border-theme">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
-            <p className="text-gray-400 text-xs sm:text-sm">
+            <p className="text-muted text-xs sm:text-sm">
               © 2025 CodeFlow. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-muted hover:text-theme transition-colors duration-200"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-muted hover:text-theme transition-colors duration-200"
               >
                 Terms of Service
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-muted hover:text-theme transition-colors duration-200"
               >
                 Cookie Settings
               </a>
