@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "./context/ThemeContext";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -18,15 +19,18 @@ function App() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
-      <Navbar scrolled={scrolled} />
-      <Hero />
-      <Features />
-      <Pricing />
-      <Testimonials />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-theme text-theme overflow-hidden">
+        <Navbar scrolled={scrolled} />
+        <Hero />
+        <Features />
+        <Pricing />
+        <Testimonials />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
